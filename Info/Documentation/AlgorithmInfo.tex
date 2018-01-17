@@ -33,26 +33,17 @@
 
 \newpage
 
-\subsection{Data Processing}
+\subsection{Data Processing and Sound output}
 
-\noindent For the instrument playstyle we decided to use the equivalent of a piano key. The area of the sensor was virtually divided into quadrants, each of these quedrants produce a different sound when the sensor threshold is surpassed. 
+\noindent For the instrument playstyle we decided to use the equivalent of a piano key. The area of the sensor was virtually divided into quadrants, each of these quedrants produce a different frequency. For a quadrant to be pressed/active the current XY-position of the finger/object has to be inside the quadrant limits and the Z-Threshold has to be surpassed. The position of the object/finger above the sensor is checked every takt. 
+
+\noindent Frenquency value is sent through UART - Protocol to the serial port of a computer. Using the "Tone.slx" Simulink file, the frequency value will be used to create a sinus signal that later is sent to the speakers of the pc. 
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=12cm]{SensorKeys.png}
 \caption{Key Distribution in sensor}
 \end{figure}
-
-\noindent For the area division four parameters are important: 
-\begin{itemize}
-\item Number of rows
-\item Number of columns
-\item Number of bits per coordinate
-\end{itemize}
-
-\noindent 
-
-\subsection{Sound Output}
 
 
 \end{document}
